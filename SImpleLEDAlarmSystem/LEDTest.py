@@ -7,7 +7,7 @@ canvas = tk.Canvas(root, height=300, width=400, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 
 led = LED(18)
-dis = DistanceSensor(echo=15, trigger=14)
+# dis = DistanceSensor(echo=15, trigger=14)
 
 times = 0
 def button_push():
@@ -18,8 +18,9 @@ def button_push():
 
 def hi():
     welcome_txt.config(text='Alarm System Is On')
-    dis.when_in_range = ledOn
-    dis.when_out_of_range = ledOff
+    ledOn()
+    # dis.when_in_range = ledOn
+    # dis.when_out_of_range = ledOff
     start_btn.config(command=lambda:bye(), text='Turn Off')
 
 def ledOn():
@@ -33,7 +34,8 @@ def noth():
 
 def bye():
     welcome_txt.config(text='Alarm System Is Off')
-    dis.when_in_range = ledOff
+    ledOff()
+    # dis.when_in_range = ledOff
     start_btn.config(command=lambda:hi(), text='Turn On')
 
 welcome_txt = tk.Label(root, text='Welcome',

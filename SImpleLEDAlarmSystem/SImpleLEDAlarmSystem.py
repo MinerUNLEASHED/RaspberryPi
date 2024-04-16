@@ -33,7 +33,7 @@ def noth():
 
 def bye():
     welcome_txt.config(text='Alarm System Is Off')
-    dis.when_in_range = noth
+    dis.when_in_range = ledOff
     start_btn.config(command=lambda:hi(), text='Turn On')
 
 welcome_txt = tk.Label(root, text='Welcome',

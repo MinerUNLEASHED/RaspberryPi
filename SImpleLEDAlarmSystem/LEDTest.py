@@ -19,6 +19,7 @@ def button_push():
 def hi():
     welcome_txt.config(text='Alarm System Is On')
     ledOn()
+    led.on()
     # dis.when_in_range = ledOn
     # dis.when_out_of_range = ledOff
     start_btn.config(command=lambda:bye(), text='Turn Off')
@@ -35,6 +36,7 @@ def noth():
 def bye():
     welcome_txt.config(text='Alarm System Is Off')
     ledOff()
+    led.off()
     # dis.when_in_range = ledOff
     start_btn.config(command=lambda:hi(), text='Turn On')
 

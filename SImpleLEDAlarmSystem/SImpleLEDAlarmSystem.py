@@ -7,7 +7,7 @@ canvas = tk.Canvas(root, height=300, width=400, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 
 led = LED(18)
-dis = DistanceSensor(echo=15, trigger=14, threshold_distance=1)
+dis = DistanceSensor(echo=15, trigger=14, threshold_distance=0.9)
 
 times = 0
 def button_push():

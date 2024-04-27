@@ -17,7 +17,7 @@ def rel():
 button.when_pressed = press
 button.when_released = rel
 
-pause()
+
 
 
 

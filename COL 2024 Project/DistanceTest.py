@@ -1,7 +1,7 @@
 from gpiozero import LED, Button
 from time import sleep
 
-button = Button(23)
+button = Button(15)
 Redled = LED(2)
 Greenled = LED(4)
 

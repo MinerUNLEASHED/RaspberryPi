@@ -9,6 +9,6 @@ while True:
     sleep(1)
     Redled.off()
     Greenled.on()
-    sleep(2)
+    sleep(0.5)
 
 

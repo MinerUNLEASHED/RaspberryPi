@@ -1,5 +1,6 @@
 from gpiozero import LED, Button
 from time import sleep
+from signal import pause
 
 button = Button(15)
 Redled = LED(2)
@@ -16,6 +17,7 @@ def rel():
 button.when_pressed = press
 button.when_released = rel
 
+pause()
 
 
 

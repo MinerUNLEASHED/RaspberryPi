@@ -2,7 +2,7 @@ import tkinter as tk
 from gpiozero import DistanceSensor, LED
 root = tk.Tk()
 BgString = '#036597'
-canvas = tk.Canvas(root, height=1000, width=4000, bg=BgString)
+canvas = tk.Canvas(root, height=500, width=2000, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 
 led = LED(18)

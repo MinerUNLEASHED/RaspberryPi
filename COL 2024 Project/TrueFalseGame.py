@@ -107,7 +107,7 @@ def checkAnswer(guess, Ans):
         welcome_txt.config(text="Correct!")
     else:
         Redled.on()
-        welcome_txt.config(text="Incorrect!")t
+        welcome_txt.config(text="Incorrect!")
     root.after(3000,resetLEDs)
 
 

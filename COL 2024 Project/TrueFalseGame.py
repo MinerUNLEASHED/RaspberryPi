@@ -38,6 +38,7 @@ def show_second_message():
 
 def show_third_message():
     welcome_txt.config(text="Otherwise known as, Muslim Spain")
+    root.after(3000, continueGame1)
 
 
 

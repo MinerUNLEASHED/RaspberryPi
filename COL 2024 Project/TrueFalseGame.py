@@ -40,7 +40,7 @@ def startGame():
 
 
 def show_second_message():
-    welcome_txt.config(text="You will be asked five questions about Al-Andalus")
+    welcome_txt.config(text="You will be asked five questions about Al-Andalus", wraplength=500)
     root.after(3000, show_third_message)
 
 

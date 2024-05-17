@@ -42,18 +42,18 @@ def bye():
     welcome_txt.config(text="it works")
 
 author_txt = tk.Label(root, text="Aalim, Aalam, Aliyan, And Azhmeer 2024",
-                      font=("Raleway", 25),
+                      font=("Raleway", 19),
                       bg=BgString,
                       fg="#ffb703")
 author_txt.grid(row=0, column=1)
 
-welcome_txt = tk.Label(root, text='Welcome',
+welcome_txt = tk.Label(root, text='COL True And False Game',
                        font=('Raleway', 25),
                        bg=BgString,
                        fg='#ffb703')
 welcome_txt.grid(row=1, column=1)
 
-start_btn = tk.Button(root, text = 'Turn On',
+start_btn = tk.Button(root, text = 'Start Playing',
                       height=2, width=15,
                       command=lambda:hi(),
                       bg='#ffb703',

@@ -70,7 +70,8 @@ def pick5():
 
 
 def playQ(question, answer):
-    welcome_txt.config(text=question)
+    welcome_txt.config(text=question, wraplength=200)
+
 
 
 

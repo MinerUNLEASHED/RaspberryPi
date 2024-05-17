@@ -51,6 +51,7 @@ def ending():
 
 
 def continueGame1():
+    global ct
     allQA = pick5()
     questions = allQA[0]
     answers = allQA[1]

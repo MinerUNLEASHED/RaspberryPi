@@ -29,9 +29,14 @@ def hi():
 def startGame():
     start_btn.grid_remove()
     welcome_txt.config(text="Background of COL Project:")
-    root.after(1500, welcome_txt.config(text="You will be asked five questions\nabout Al-Andalus"))
-    root.after(2000, welcome_txt.config(text="Otherwise known as, Muslim Spain"))
-    time.sleep(2)
+    root.after(1500, show_second_message)
+
+def show_second_message():
+    welcome_txt.config(text="You will be asked five questions\nabout Al-Andalus")
+    root.after(2000, show_third_message)
+
+def show_third_message():
+    welcome_txt.config(text="Otherwise known as, Muslim Spain")
 
 
 # def ledOn():

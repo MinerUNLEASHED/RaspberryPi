@@ -104,10 +104,10 @@ def checkAnswer(guess, Ans):
     # false.close()
     if guess==int(Ans):
         Greenled.on()
-        welcome_txt.config("Correct!")
+        welcome_txt.config(text="Correct!")
     else:
         Redled.on()
-        welcome_txt.config("Incorrect!")
+        welcome_txt.config(tex="Incorrect!")
     root.after(3000,resetLEDs)
 
 

@@ -28,7 +28,7 @@ def hi():
 
 def startGame():
     start_btn.grid_remove()
-    welcome_txt.config("Background of COL Project:")
+    welcome_txt.config(text="Background of COL Project:")
     time.sleep(1.5)
     welcome_txt.config(text="You will be asked five questions\nabout Al-Andalus")
     time.sleep(2)

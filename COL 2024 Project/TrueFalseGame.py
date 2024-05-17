@@ -65,7 +65,7 @@ welcome_txt.grid(row=1, column=1)
 
 start_btn = tk.Button(root, text = 'Start Playing',
                       height=2, width=15,
-                      command=lambda:hi(),
+                      command=lambda:startGame(),
                       bg='#ffb703',
                       activebackground='#fb8500',
                       fg='#023047',

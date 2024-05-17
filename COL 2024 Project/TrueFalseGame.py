@@ -1,4 +1,5 @@
 import tkinter as tk
+import random
 from gpiozero import DistanceSensor, LED, Button
 import time
 root = tk.Tk()
@@ -33,11 +34,44 @@ def startGame():
 
 def show_second_message():
     welcome_txt.config(text="You will be asked five questions\nabout Al-Andalus")
-    root.after(2000, show_third_message)
+    root.after(3000, show_third_message)
 
 def show_third_message():
     welcome_txt.config(text="Otherwise known as, Muslim Spain")
 
+
+
+def pick5():
+    # Read lines from Questions.txt
+    with open("Questions.txt", "r") as q_file:
+        questions = q_file.readlines()
+
+    # Read lines from Answers.txt
+    with open("Answers.txt", "r") as a_file:
+        answers = a_file.readlines()
+
+    # Ensure both files have the same number of lines
+    if len(questions) != len(answers):
+        raise ValueError("Questions and Answers files must have the same number of lines")
+
+    # Get 5 random indices
+    random_indices = random.sample(range(len(questions)), 5)
+
+    # Pick questions and answers based on the random indices
+    selected_questions = [questions[i].strip() for i in random_indices]
+    selected_answers = [answers[i].strip() for i in random_indices]
+
+    # Combine questions and answers into a single list
+    result = [selected_questions, selected_answers]
+
+    return result
+
+
+def continueGame1():
+    allQA = pick5()
+    questions = allQA[0]
+    answers = allQA[1]
+    print(allQA)
 
 # def ledOn():
 #     led.on()

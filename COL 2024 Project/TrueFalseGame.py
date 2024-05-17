@@ -46,6 +46,7 @@ def show_second_message():
 
 def show_third_message():
     welcome_txt.config(text="Otherwise known as, Muslim Spain")
+    score_txt.config(text=f"Score {score}")
     root.after(3000, continueGame1)
 
 
@@ -69,7 +70,6 @@ def continueGame1():
     global score
     allQA = pick5()
     questions = allQA[0]
-    score_txt.config(text=f"Score {score}")
     answers = allQA[1]
     # print(allQA)
     ct += 1
@@ -114,6 +114,7 @@ def playQ(question, answer):
 
 
 def checkAnswer(guess, Ans):
+    global score
     # true.close()
     # false.close()TrueFalseGame.py
     if guess == int(Ans):

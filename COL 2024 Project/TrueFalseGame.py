@@ -1,5 +1,6 @@
 import tkinter as tk
 from gpiozero import DistanceSensor, LED, Button
+import time
 root = tk.Tk()
 BgString = '#036597'
 canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
@@ -9,15 +10,14 @@ true = Button(15)
 false = Button(13)
 Redled = LED(2)
 Greenled = LED(4)
-led = LED(18)
 # dis = DistanceSensor(echo=15, trigger=14, threshold_distance=0.9)
 
-times = 0
-def button_push():
-    global times
-    times += 1
-    # times **= 2
-    welcome_txt.config(text=f'Button Pushes:\n{times}!')
+# times = 0
+# def button_push():
+#     global times
+#     times += 1
+#     # times **= 2
+#     welcome_txt.config(text=f'Button Pushes:\n{times}!')
 
 def hi():
     # welcome_txt.config(text='Alarm System Is On')
@@ -26,11 +26,21 @@ def hi():
     # start_btn.config(command=lambda:bye(), text='Turn Off')
     welcome_txt.config(text="This Works!")
 
-def ledOn():
-    led.on()
+def startGame():
+    start_btn.grid_remove()
+    welcome_txt.config("Background of COL Project:")
+    time.sleep(1.5)
+    welcome_txt.config(text="You will be asked five questions\nabout Al-Andalus")
+    time.sleep(2)
+    welcome_txt.config(text="Otherwise known as, Muslim Spain")
+    time.sleep(2)
 
-def ledOff():
-    led.off()
+
+# def ledOn():
+#     led.on()
+#
+# def ledOff():
+#     led.off()
 
 def noth():
     pass

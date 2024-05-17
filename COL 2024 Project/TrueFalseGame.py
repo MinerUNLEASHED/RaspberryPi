@@ -89,15 +89,13 @@ def playQ(question, answer):
     false.when_pressed = lambda:checkAnswer(2,answer)
 
 def checkAnswer(guess, Ans):
-    true.close()
-    false.close()
+    # true.close()
+    # false.close()
     if guess==int(Ans):
         Greenled.on()
     else:
         Redled.on()
     root.after(3000,resetLEDs)
-
-
 
 
 def resetLEDs():
@@ -111,14 +109,14 @@ def resetLEDs():
 # def ledOff():
 #     led.off()
 
-def noth():
-    pass
+# def noth():
+#     pass
 
-def bye():
-    # welcome_txt.config(text='Alarm System Is Off')
-    # dis.when_in_range = ledOff
-    # start_btn.config(command=lambda:hi(), text='Turn On')
-    welcome_txt.config(text="it works")
+# def bye():
+#     # welcome_txt.config(text='Alarm System Is Off')
+#     # dis.when_in_range = ledOff
+#     # start_btn.config(command=lambda:hi(), text='Turn On')
+#     welcome_txt.config(text="it works")
 
 author_txt = tk.Label(root, text="Aalim, Aalam, Aliyan, And Azhmeer 2024",
                       font=("Raleway", 19),

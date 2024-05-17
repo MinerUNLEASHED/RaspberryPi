@@ -41,6 +41,12 @@ def bye():
     # start_btn.config(command=lambda:hi(), text='Turn On')
     welcome_txt.config(text="it works")
 
+author_txt = tk.Label(root, text="Aalim, Aalam, Aliyan, And Azhmeer 2024",
+                      font=("Raleway", 25),
+                      bg=BgString,
+                      fg="#ffb703")
+author_txt.grid(row=0, column=1)
+
 welcome_txt = tk.Label(root, text='Welcome',
                        font=('Raleway', 25),
                        bg=BgString,

@@ -6,7 +6,7 @@ root = tk.Tk()
 BgString = '#036597'
 canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
-
+global score
 true = Button(15)
 false = Button(13)
 Redled = LED(2)
@@ -42,6 +42,19 @@ def show_third_message():
     root.after(3000, continueGame1)
 
 
+def continueGame1():
+    allQA = pick5()
+    questions = allQA[0]
+    answers = allQA[1]
+    updateScore()
+    # print(allQA)
+    for question, answer in zip(questions, answers):
+        playQ(question, answer)
+
+
+def updateScore():
+    score_txt.config(text=f"Score: {score}")
+
 
 def pick5():
     # Read lines from Questions.txt
@@ -73,17 +86,26 @@ def playQ(question, answer):
     welcome_txt.config(text=question, wraplength=500)
     author_txt.config(text="Select Left For True And Right For False")
     author_txt.grid(row=0, column=1)
+    true.when_pressed = lambda:checkAnswer(1,answer)
+    false.when_pressed = lambda:checkAnswer(2,answer)
+
+def checkAnswer(guess, Ans):
+    true.close()
+    false.close()
+    if guess==Ans:
+        Greenled.on()
+        score+=1
+    else:
+        Redled.on()
+    updateScore()
+    root.after(3000,resetLEDs)
 
 
 
 
-def continueGame1():
-    allQA = pick5()
-    questions = allQA[0]
-    answers = allQA[1]
-    # print(allQA)
-    for question, answer in zip(questions, answers):
-        playQ(question, answer)
+def resetLEDs():
+    Greenled.off()
+    Redled.off()
 
 # def ledOn():
 #     led.on()
@@ -111,6 +133,13 @@ welcome_txt = tk.Label(root, text='COL True And False Game',
                        bg=BgString,
                        fg='#ffb703')
 welcome_txt.grid(row=1, column=1)
+
+score = 0
+score_txt = tk.Label(root, text="",
+                     font=("Raleway",15),
+                     bg=BgString,
+                     fg="#ffb703")
+score_txt.grid(row=2, column=2)
 
 start_btn = tk.Button(root, text = 'Start Playing',
                       height=2, width=15,

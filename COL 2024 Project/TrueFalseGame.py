@@ -7,6 +7,8 @@ BgString = '#036597'
 canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 global score
+score = 0
+
 true = Button(15)
 false = Button(13)
 Redled = LED(2)
@@ -135,7 +137,6 @@ welcome_txt = tk.Label(root, text='COL True And False Game',
                        fg='#ffb703')
 welcome_txt.grid(row=1, column=1)
 
-score = 0
 score_txt = tk.Label(root, text="",
                      font=("Raleway",15),
                      bg=BgString,

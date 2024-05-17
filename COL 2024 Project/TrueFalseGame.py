@@ -3,6 +3,7 @@ import tkinter as tk
 
 from gpiozero import LED, Button
 
+global score
 root = tk.Tk()
 BgString = '#036597'
 canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
@@ -39,7 +40,7 @@ def startGame():
 
 
 def show_second_message():
-    welcome_txt.config(text="You will be asked five questions\nabout Al-Andalus")
+    welcome_txt.config(text="You will be asked five questions about Al-Andalus")
     root.after(3000, show_third_message)
 
 
@@ -53,13 +54,22 @@ ct = 0
 
 
 def ending():
+    author_txt.grid_remove()
     welcome_txt.config(text="Thanks for playing!")
+
+
+def updateScore():
+    global score
+    score_txt.config(text=f"Score {score}")
+    continueGame1()
 
 
 def continueGame1():
     global ct
+    global score
     allQA = pick5()
     questions = allQA[0]
+    score_txt.config(text=f"Score {score}")
     answers = allQA[1]
     # print(allQA)
     ct += 1
@@ -109,16 +119,19 @@ def checkAnswer(guess, Ans):
     if guess == int(Ans):
         Greenled.on()
         welcome_txt.config(text="Correct!")
+        score+=1
     else:
         Redled.on()
         config = welcome_txt.config(text="Incorrect!")
+
     root.after(3000, resetLEDs)
 
 
 def resetLEDs():
     Greenled.off()
     Redled.off()
-    continueGame1()
+    updateScore()
+
 
 
 # def ledOn():
@@ -143,11 +156,12 @@ author_txt.grid(row=0, column=1)
 welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 25), bg=BgString, fg='#ffb703')
 welcome_txt.grid(row=1, column=1)
 
-# score_txt = tk.Label(root, text="",
-#                      font=("Raleway",15),
-#                      bg=BgString,
-#                      fg="#ffb703")
-# score_txt.grid(row=2, column=2)
+score = 0
+score_txt = tk.Label(root, text="",
+                     font=("Raleway",15),
+                     bg=BgString,
+                     fg="#ffb703")
+score_txt.grid(row=2, column=2)
 
 start_btn = tk.Button(root, text='Start Playing', height=2, width=15, command=lambda: startGame(), bg='#ffb703',
                       activebackground='#fb8500', fg='#023047', activeforeground='#FFFFFF')

@@ -29,7 +29,8 @@ def hi():
 
 def startGame():
     start_btn.grid_remove()
-    welcome_txt.config(text="Background of COL Project:")
+    author_txt.grid_remove()
+    welcome_txt.config(text="Background of COL Project:", font=("Railway",20))
     root.after(1500, show_second_message)
 
 def show_second_message():
@@ -68,11 +69,18 @@ def pick5():
     return result
 
 
+def playQ(question, answer):
+    welcome_txt.config(text=question)
+
+
+
 def continueGame1():
     allQA = pick5()
     questions = allQA[0]
     answers = allQA[1]
-    print(allQA)
+    # print(allQA)
+    for question, answer in zip(questions, answers):
+        playQ(question, answer)
 
 # def ledOn():
 #     led.on()

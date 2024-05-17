@@ -42,14 +42,25 @@ def show_third_message():
     welcome_txt.config(text="Otherwise known as, Muslim Spain")
     root.after(3000, continueGame1)
 
+global ct
+ct = 0
+
+
+def ending():
+    welcome_txt.config(text="Thanks for playing!")
+
 
 def continueGame1():
     allQA = pick5()
     questions = allQA[0]
     answers = allQA[1]
     # print(allQA)
-    for question, answer in zip(questions, answers):
-        playQ(question, answer)
+    ct+=1
+    if(ct<=5):
+        playQ(questions[0], answers[0])
+    else:
+        ending()
+
 
 
 
@@ -80,7 +91,6 @@ def pick5():
 
     return result
 
-
 def playQ(question, answer):
     welcome_txt.config(text=question, wraplength=500)
     author_txt.config(text="Select Left For True And Right For False")
@@ -93,8 +103,10 @@ def checkAnswer(guess, Ans):
     # false.close()
     if guess==int(Ans):
         Greenled.on()
+        welcome_txt.config("Correct!")
     else:
         Redled.on()
+        welcome_txt.config("Incorrect!")
     root.after(3000,resetLEDs)
 
 

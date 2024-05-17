@@ -30,7 +30,7 @@ def hi():
 def startGame():
     start_btn.grid_remove()
     author_txt.grid_remove()
-    welcome_txt.config(text="Background of COL Project:", font=("Railway",20))
+    welcome_txt.config(text="Background of COL Project:", font=("Railway",23))
     root.after(1500, show_second_message)
 
 def show_second_message():
@@ -71,6 +71,8 @@ def pick5():
 
 def playQ(question, answer):
     welcome_txt.config(text=question, wraplength=500)
+    author_txt.config(text="Select Left For True And Right For False")
+    author_txt.grid(row=0, column=1)
 
 
 

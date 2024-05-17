@@ -92,7 +92,7 @@ def playQ(question, answer):
 def checkAnswer(guess, Ans):
     true.close()
     false.close()
-    if guess==Ans:
+    if guess==int(Ans):
         Greenled.on()
         score+=1
     else:
@@ -106,6 +106,7 @@ def checkAnswer(guess, Ans):
 def resetLEDs():
     Greenled.off()
     Redled.off()
+    continueGame1()
 
 # def ledOn():
 #     led.on()

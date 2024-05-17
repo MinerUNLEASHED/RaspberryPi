@@ -6,8 +6,7 @@ root = tk.Tk()
 BgString = '#036597'
 canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
-global score
-score = 0
+
 
 true = Button(15)
 false = Button(13)
@@ -48,14 +47,12 @@ def continueGame1():
     allQA = pick5()
     questions = allQA[0]
     answers = allQA[1]
-    updateScore()
     # print(allQA)
     for question, answer in zip(questions, answers):
         playQ(question, answer)
 
 
-def updateScore():
-    score_txt.config(text=f"Score: {score}")
+
 
 
 def pick5():
@@ -96,10 +93,8 @@ def checkAnswer(guess, Ans):
     false.close()
     if guess==int(Ans):
         Greenled.on()
-        score+=1
     else:
         Redled.on()
-    updateScore()
     root.after(3000,resetLEDs)
 
 
@@ -137,11 +132,11 @@ welcome_txt = tk.Label(root, text='COL True And False Game',
                        fg='#ffb703')
 welcome_txt.grid(row=1, column=1)
 
-score_txt = tk.Label(root, text="",
-                     font=("Raleway",15),
-                     bg=BgString,
-                     fg="#ffb703")
-score_txt.grid(row=2, column=2)
+# score_txt = tk.Label(root, text="",
+#                      font=("Raleway",15),
+#                      bg=BgString,
+#                      fg="#ffb703")
+# score_txt.grid(row=2, column=2)
 
 start_btn = tk.Button(root, text = 'Start Playing',
                       height=2, width=15,

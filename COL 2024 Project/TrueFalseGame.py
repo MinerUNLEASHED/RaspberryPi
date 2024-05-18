@@ -19,7 +19,7 @@ Greenled = LED(4)
 def startGame():
     start_btn.grid_remove()
     author_txt.grid_remove()
-    welcome_txt.config(text="Background of COL Project:", font=("Railway", 23))
+    welcome_txt.config(text="Background of COL Project:", font=("Railway", 36))
     root.after(2500, show_second_message)
 
 
@@ -108,18 +108,18 @@ def resetLEDs():
     updateScore()
 
 
-author_txt = tk.Label(root, text="Aalim, Aalam, Alyan, And Azhmeer 2024", font=("Raleway", 19), bg=BgString,
+author_txt = tk.Label(root, text="Aalim, Aalam, Alyan, And Azhmeer 2024", font=("Raleway", 30), bg=BgString,
                       fg=FgString)
 author_txt.grid(row=0, column=1)
 
-welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 25), bg=BgString, fg=FgString)
+welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 40), bg=BgString, fg=FgString)
 welcome_txt.grid(row=1, column=1)
 
 score = 0
-score_txt = tk.Label(root, text="", font=("Raleway", 15), bg=BgString, fg=FgString)
+score_txt = tk.Label(root, text="", font=("Raleway", 24), bg=BgString, fg=FgString)
 score_txt.grid(row=2, column=2)
 
-start_btn = tk.Button(root, text='Start Playing', height=2, width=15, command=lambda: startGame(), bg="#c7eae4",
+start_btn = tk.Button(root, text='Start Playing', height=4, width=30, command=lambda: startGame(), bg="#c7eae4",
                       activebackground="#ffd972", fg="#efa7a7", activeforeground='#FFFFFF')
 start_btn.grid(row=2, column=1)
 

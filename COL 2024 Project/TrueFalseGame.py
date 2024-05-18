@@ -5,7 +5,8 @@ from gpiozero import LED, Button
 
 global score
 root = tk.Tk()
-BgString = '#036597'
+BgString = '#fcbcb8'
+FgString = "#a7e8bd"
 canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 
@@ -107,18 +108,18 @@ def resetLEDs():
 
 
 author_txt = tk.Label(root, text="Aalim, Aalam, Aliyan, And Azhmeer 2024", font=("Raleway", 19), bg=BgString,
-                      fg="#ffb703")
+                      fg=FgString)
 author_txt.grid(row=0, column=1)
 
-welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 25), bg=BgString, fg='#ffb703')
+welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 25), bg=BgString, fg=FgString)
 welcome_txt.grid(row=1, column=1)
 
 score = 0
-score_txt = tk.Label(root, text="", font=("Raleway", 15), bg=BgString, fg="#ffb703")
+score_txt = tk.Label(root, text="", font=("Raleway", 15), bg=BgString, fg=FgString)
 score_txt.grid(row=2, column=2)
 
-start_btn = tk.Button(root, text='Start Playing', height=2, width=15, command=lambda: startGame(), bg='#ffb703',
-                      activebackground='#fb8500', fg='#023047', activeforeground='#FFFFFF')
+start_btn = tk.Button(root, text='Start Playing', height=2, width=15, command=lambda: startGame(), bg="#c7eae4",
+                      activebackground="#ffd972", fg=FgString, activeforeground='#FFFFFF')
 start_btn.grid(row=2, column=1)
 
 root.mainloop()

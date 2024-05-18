@@ -114,7 +114,7 @@ author_txt = tk.Label(root, text="Aalim, Aalam, Alyan, And Azhmeer 2024", font=(
 welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 40), bg=BgString, fg=FgString)
 score_txt = tk.Label(root, text="", font=("Raleway", 24), bg=BgString, fg=FgString)
 start_btn = tk.Button(root, text='Start Playing', height=4, width=30, command=lambda: startGame(), bg="#c7eae4",
-                          activebackground="#ffd972", fg="#efa7a7", activeforeground='#FFFFFF')
+                          activebackground="#ffd972", fg="#000000", activeforeground='#FFFFFF', font=('Raleway',20))
 
 def startAll():
     global score

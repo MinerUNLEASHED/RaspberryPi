@@ -5,8 +5,8 @@ from gpiozero import LED, Button
 
 global score
 root = tk.Tk()
-BgString = '#fcbcb8'
-FgString = "#a7e8bd"
+BgString = '#FFFFFF'
+FgString = "#000000"
 canvas = tk.Canvas(root, height=1000, width=1500, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 

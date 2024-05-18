@@ -7,7 +7,7 @@ global score
 root = tk.Tk()
 BgString = '#fcbcb8'
 FgString = "#a7e8bd"
-canvas = tk.Canvas(root, height=500, width=750, bg=BgString)
+canvas = tk.Canvas(root, height=1250, width=2222, bg=BgString)
 canvas.grid(rowspan=3, columnspan=3)
 
 true = Button(15)
@@ -41,6 +41,7 @@ ct = 0
 def ending():
     author_txt.grid_remove()
     welcome_txt.config(text="Thanks for playing!")
+    startGame()
 
 
 def updateScore():

@@ -20,18 +20,18 @@ def startGame():
     start_btn.grid_remove()
     author_txt.grid_remove()
     welcome_txt.config(text="Background of COL Project:", font=("Railway", 23))
-    root.after(1500, show_second_message)
+    root.after(2500, show_second_message)
 
 
 def show_second_message():
     welcome_txt.config(text="You will be asked five questions about Al-Andalus", wraplength=500)
-    root.after(3000, show_third_message)
+    root.after(5000, show_third_message)
 
 
 def show_third_message():
     welcome_txt.config(text="Otherwise known as, Muslim Spain")
     score_txt.config(text=f"Score {score}")
-    root.after(3000, continueGame1)
+    root.after(5000, continueGame1)
 
 
 global ct
@@ -107,7 +107,7 @@ def resetLEDs():
     updateScore()
 
 
-author_txt = tk.Label(root, text="Aalim, Aalam, Aliyan, And Azhmeer 2024", font=("Raleway", 19), bg=BgString,
+author_txt = tk.Label(root, text="Aalim, Aalam, Alyan, And Azhmeer 2024", font=("Raleway", 19), bg=BgString,
                       fg=FgString)
 author_txt.grid(row=0, column=1)
 
@@ -119,7 +119,7 @@ score_txt = tk.Label(root, text="", font=("Raleway", 15), bg=BgString, fg=FgStri
 score_txt.grid(row=2, column=2)
 
 start_btn = tk.Button(root, text='Start Playing', height=2, width=15, command=lambda: startGame(), bg="#c7eae4",
-                      activebackground="#ffd972", fg=FgString, activeforeground='#FFFFFF')
+                      activebackground="#ffd972", fg="#efa7a7", activeforeground='#FFFFFF')
 start_btn.grid(row=2, column=1)
 
 root.mainloop()

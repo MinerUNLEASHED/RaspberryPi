@@ -29,6 +29,7 @@ def show_second_message():
 
 
 def show_third_message():
+    global score
     welcome_txt.config(text="Otherwise known as, Muslim Spain")
     score_txt.config(text=f"Score {score}")
     root.after(5000, continueGame1)

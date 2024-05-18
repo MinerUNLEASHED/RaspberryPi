@@ -24,7 +24,7 @@ def startGame():
 
 
 def show_second_message():
-    welcome_txt.config(text="You will be asked five questions about Al-Andalus", wraplength=500)
+    welcome_txt.config(text="You will be asked SEVEN questions about Al-Andalus", wraplength=500)
     root.after(5000, show_third_message)
 
 
@@ -58,7 +58,7 @@ def continueGame1():
     answers = allQA[1]
     # print(allQA)
     ct += 1
-    if (ct <= 5):
+    if (ct <= 7):
         playQ(questions[0], answers[0])
     else:
         ending()

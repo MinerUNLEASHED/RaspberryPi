@@ -41,7 +41,7 @@ ct = 0
 def ending():
     author_txt.grid_remove()
     welcome_txt.config(text="Thanks for playing!")
-    startGame()
+    startAll()
 
 
 def updateScore():
@@ -107,20 +107,20 @@ def resetLEDs():
     Redled.off()
     updateScore()
 
-
 author_txt = tk.Label(root, text="Aalim, Aalam, Alyan, And Azhmeer 2024", font=("Raleway", 30), bg=BgString,
-                      fg=FgString)
-author_txt.grid(row=0, column=1)
+                          fg=FgString)
 
 welcome_txt = tk.Label(root, text='COL True And False Game', font=('Raleway', 40), bg=BgString, fg=FgString)
-welcome_txt.grid(row=1, column=1)
-
-score = 0
 score_txt = tk.Label(root, text="", font=("Raleway", 24), bg=BgString, fg=FgString)
-score_txt.grid(row=2, column=2)
-
 start_btn = tk.Button(root, text='Start Playing', height=4, width=30, command=lambda: startGame(), bg="#c7eae4",
-                      activebackground="#ffd972", fg="#efa7a7", activeforeground='#FFFFFF')
-start_btn.grid(row=2, column=1)
+                          activebackground="#ffd972", fg="#efa7a7", activeforeground='#FFFFFF')
 
+def startAll():
+    author_txt.grid(row=0, column=1)
+    welcome_txt.grid(row=1, column=1)
+    score = 0
+    score_txt.grid(row=2, column=2)
+    start_btn.grid(row=2, column=1)
+
+startAll()
 root.mainloop()

@@ -118,9 +118,12 @@ start_btn = tk.Button(root, text='Start Playing', height=4, width=30, command=la
 
 def startAll():
     global score
+    author_txt.config(text="Aalim, Aalam, Alyan, And Azhmeer 2024", font=("Raleway", 30))
     author_txt.grid(row=0, column=1)
+    welcome_txt.config(text="COL True and False Game", font=('Raleway', 40))
     welcome_txt.grid(row=1, column=1)
     score = 0
+    score_txt.config(text="")
     score_txt.grid(row=2, column=2)
     start_btn.grid(row=2, column=1)
 

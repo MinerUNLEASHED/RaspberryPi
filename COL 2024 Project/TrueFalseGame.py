@@ -117,6 +117,7 @@ start_btn = tk.Button(root, text='Start Playing', height=4, width=30, command=la
                           activebackground="#ffd972", fg="#efa7a7", activeforeground='#FFFFFF')
 
 def startAll():
+    global score
     author_txt.grid(row=0, column=1)
     welcome_txt.grid(row=1, column=1)
     score = 0
